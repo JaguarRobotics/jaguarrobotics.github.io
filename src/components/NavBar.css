@@ -1,0 +1,43 @@
+.fixed-navbar-content {
+    position: fixed;
+    z-index: 0;
+}
+.absolute-navbar-content {
+    position: absolute;
+    z-index: 1;
+}
+.hidden-navbar-content {
+    opacity: 0;
+}
+.main-nav {
+    background-color: #040160;
+    top: 0;
+    left: 0;
+}
+.main-nav .brand-logo {
+    text-transform: uppercase;
+}
+.main-nav .side-nav {
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+.main-nav .side-nav.active {
+    transform: translateX(0);
+}
+.main-nav .user-view {
+    height: 300px;
+}
+.main-nav .icon {
+    position: absolute;
+    height: calc(100% - 40px);
+    margin: 20px;
+}
+.main-nav .icon.spin {
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}

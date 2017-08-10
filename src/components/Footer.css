@@ -1,0 +1,15 @@
+.page-footer {
+    background-color: #040160 !important;
+}
+.page-footer .footer-copyright {
+    background-color: rgba(51, 51, 51, 0.32) !important;
+}
+.page-footer .connect-icons .col {
+    text-align: center;
+}
+.page-footer .connect-icons img {
+    width: 32px;
+    height: 32px;
+    margin: 16px;
+    text-align: center;
+}
