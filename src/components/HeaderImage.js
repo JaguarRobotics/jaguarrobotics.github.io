@@ -1,17 +1,21 @@
 import React from "react";
 import {Parallax, ParallaxImage} from "./Parallax";
-import person from "./person.png";
-import robot from "./robot.png";
 import "./HeaderImage.css";
+
+export class HeaderFactory {
+    static register(src, x, y, z, width, height) {
+        HeaderFactory.images.push(<ParallaxImage src={src} x={x} y={y} z={z} width={width} height={height} />);
+    }
+}
+
+HeaderFactory.images = [];
 
 export default class HeaderImage extends React.Component {
     render() {
         return (
             <div className="header-image">
                 <Parallax>
-                    <ParallaxImage src={person} x={30} y={50} z={50} width={100} height={150} />
-                    <ParallaxImage src={person} x={70} y={50} z={50} width={100} height={150} />
-                    <ParallaxImage src={robot} x={50} y={20} z={100} width={150} height={150} />
+                    {HeaderFactory.images}
                 </Parallax>
             </div>
         );
