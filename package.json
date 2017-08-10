@@ -5,13 +5,16 @@
   "dependencies": {
     "material-design-icons": "^3.0.1",
     "materialize-css": "^0.100.1",
+    "nodegit": "^0.18.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-router-dom": "^4.1.2",
     "react-scripts": "1.0.11"
   },
   "scripts": {
+    "prestart": "src/build/cloneContent.js",
     "start": "react-scripts start",
+    "prebuild": "src/build/cloneContent.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
