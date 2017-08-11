@@ -1,10 +1,6 @@
 import React from "react";
-import tba from "./ic_notification.png";
-import facebook from "./FB-f-Logo__white_50.png";
-import instagram from "./glyph-logo_May2016.png";
-import twitter from "./Twitter_Logo_White_On_Image.png";
-import email from "material-design-icons/communication/1x_web/ic_email_white_36dp.png";
-import github from "./GitHub-Mark-Light-32px.png";
+import Brand from "../content/meta/Brand";
+import Social from "../content/meta/Social";
 import "./Footer.css";
 
 export default class Footer extends React.Component {
@@ -23,36 +19,13 @@ export default class Footer extends React.Component {
                             <h5 className="center">Connect</h5>
                             <div className="container connect-icons">
                                 <div className="row">
-                                    <div className="col s2 m4">
-                                        <a href="https://www.thebluealliance.com/team/1810" target="_blank" rel="noopener noreferrer">
-                                            <img src={tba} alt="The Blue Alliance" />
-                                        </a>
-                                    </div>
-                                    <div className="col s2 m4">
-                                        <a href="https://www.facebook.com/jagrobotics1810" target="_blank" rel="noopener noreferrer">
-                                            <img src={facebook} alt="Facebook" />
-                                        </a>
-                                    </div>
-                                    <div className="col s2 m4">
-                                        <a href="http://www.instagram.com/1810jagrobotics" target="_blank" rel="noopener noreferrer">
-                                            <img src={instagram} alt="Instagram" />
-                                        </a>
-                                    </div>
-                                    <div className="col s2 m4">
-                                        <a href="http://www.twitter.com/1810jagrobotics" target="_blank" rel="noopener noreferrer">
-                                            <img src={twitter} alt="Twitter" />
-                                        </a>
-                                    </div>
-                                    <div className="col s2 m4">
-                                        <a href="mailto:1810jaguarrobotics@gmail.com">
-                                            <img src={email} alt="Email" />
-                                        </a>
-                                    </div>
-                                    <div className="col s2 m4">
-                                        <a href="https://github.com/JaguarRobotics" target="_blank" rel="noopener noreferrer">
-                                            <img src={github} alt="GitHub" />
-                                        </a>
-                                    </div>
+                                    {Social.map(media => (
+                                        <div className="col s2 m4">
+                                            <a href={media.href} target="_blank" rel="noopener noreferrer">
+                                                <img src={media.icon} alt={media.name} />
+                                            </a>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         </div>
@@ -60,8 +33,7 @@ export default class Footer extends React.Component {
                 </div>
                 <div className="footer-copyright">
                     <div className="container">
-                        Copyright &copy; 2017 Jaguar Robotics.
-                        All Rights Reserved.
+                        {Brand.copyright}
                     </div>
                 </div>
             </footer>

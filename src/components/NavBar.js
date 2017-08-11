@@ -1,7 +1,6 @@
 import React from "react";
 import HeaderImage from "./HeaderImage";
-import background from "./background.png";
-import foreground from "./foreground.png";
+import Brand from "../content/meta/Brand";
 import "./NavBar.css";
 
 class NavBarContent extends React.Component {
@@ -25,7 +24,7 @@ class NavBarContent extends React.Component {
                 {this.props.children}
                 <div className="nav-wrapper">
                     <a className="brand-logo center">
-                        Jaguar Robotics
+                        {Brand.name}
                     </a>
                     <ul className="right">
                         <li>
@@ -40,8 +39,8 @@ class NavBarContent extends React.Component {
                         <li>
                             <div className="user-view">
                                 <div className="background">
-                                    <img src={background} alt="" className="icon spin" />
-                                    <img src={foreground} alt="" className="icon" />
+                                    <img src={Brand.background} alt="" className="icon spin" />
+                                    <img src={Brand.foreground} alt="" className="icon" />
                                 </div>
                             </div>
                         </li>
