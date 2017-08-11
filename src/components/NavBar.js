@@ -1,4 +1,5 @@
 import React from "react";
+import PageFactory from "../PageFactory";
 import HeaderImage from "./HeaderImage";
 import Brand from "../content/meta/Brand";
 import "./NavBar.css";
@@ -44,11 +45,9 @@ class NavBarContent extends React.Component {
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <a>
-                                Home
-                            </a>
-                        </li>
+                        {React.Children.map(PageFactory.navbar, child => React.cloneElement(child, {
+                            "onClick": this.handleClick
+                        }))}
                     </ul>
                     {this.state.navActive && <div id="sidenav-overlay" onClick={this.handleClick} />}
                 </div>

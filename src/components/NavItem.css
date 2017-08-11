@@ -1,0 +1,6 @@
+.nav-group a {
+    padding-left: 48px !important;
+}
+.nav-group-hdr:hover {
+    background-color: initial !important;
+}
