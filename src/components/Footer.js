@@ -21,8 +21,8 @@ export default class Footer extends React.Component {
                             <h5 className="center">Connect</h5>
                             <div className="container connect-icons">
                                 <div className="row">
-                                    {Social.map(media => (
-                                        <div className="col s2 m4">
+                                    {Social.map((media, i) => (
+                                        <div key={"media-" + i} className="col s2 m4">
                                             <a href={media.href} target="_blank" rel="noopener noreferrer">
                                                 <img src={media.icon} alt={media.name} />
                                             </a>

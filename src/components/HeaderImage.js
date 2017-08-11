@@ -8,8 +8,8 @@ export default class HeaderImage extends React.Component {
         return (
             <div className="header-image">
                 <Parallax>
-                    {Header.map(props => (
-                        <ParallaxImage {... props} />
+                    {Header.map((props, i) => (
+                        <ParallaxImage key={"image-" + i} {... props} />
                     ))}
                 </Parallax>
             </div>

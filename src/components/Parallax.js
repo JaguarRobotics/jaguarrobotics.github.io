@@ -2,10 +2,6 @@ import React from "react";
 import "./Parallax.css";
 
 export class ParallaxImage extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <img className="parallax-image" src={this.props.src} alt="" style={{

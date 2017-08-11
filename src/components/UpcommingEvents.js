@@ -31,8 +31,8 @@ export default class UpcommingEvents extends React.Component {
             <div>
                 <h5 className="center">Upcomming Events</h5>
                 <ul className="browser-default">
-                    {this.state.events.map(ev => (
-                        <li>
+                    {this.state.events.map((ev, i) => (
+                        <li key={"event-" + i}>
                             {ev.name}
                         </li>
                     ))}

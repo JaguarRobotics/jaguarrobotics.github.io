@@ -21,7 +21,7 @@ export default class PageFactory {
     }
 
     static register(component, url, name, group) {
-        PageFactory.pages.push(<Route path={url} component={component} />);
+        PageFactory.pages.push(<Route path={url} component={component} key={url} />);
         if (group && group.length > 0) {
             for (var i = 0; i < PageFactory.navbar.length; ++i) {
                 if (PageFactory.navbar[i].props.name === group) {
