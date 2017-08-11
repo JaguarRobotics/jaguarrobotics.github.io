@@ -1,4 +1,6 @@
 import React from "react";
+import CountdownTimer from "./CountdownTimer";
+import UpcommingEvents from "./UpcommingEvents";
 import Brand from "../content/meta/Brand";
 import Social from "../content/meta/Social";
 import "./Footer.css";
@@ -10,10 +12,10 @@ export default class Footer extends React.Component {
                 <div className="container">
                     <div className="row">
                         <div className="col s12 m4">
-                            <h5 className="center">Build Season Starts In</h5>
+                            <CountdownTimer />
                         </div>
                         <div className="col s12 m4">
-                            <h5 className="center">Upcomming Events</h5>
+                            <UpcommingEvents />
                         </div>
                         <div className="col s12 m4">
                             <h5 className="center">Connect</h5>
