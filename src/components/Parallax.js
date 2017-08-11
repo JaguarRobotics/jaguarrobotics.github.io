@@ -25,20 +25,30 @@ export class Parallax extends React.Component {
         };
         this.getState = this.getState.bind(this);
         this.handleMouseMove = this.handleMouseMove.bind(this);
+        this.handleDeviceOrientation = this.handleDeviceOrientation.bind(this);
     }
 
     componentDidMount() {
         document.body.addEventListener("mousemove", this.handleMouseMove);
+        window.addEventListener("deviceorientation", this.handleDeviceOrientation);
     }
 
     componentWillUnmount() {
         document.body.removeEventListener("mousemove", this.handleMouseMove);
+        window.removeEventListener("deviceorientation", this.handleDeviceOrientation);
     }
 
     handleMouseMove(ev) {
         this.setState({
             "x": 0.5 - ev.clientX / document.documentElement.clientWidth,
             "y": ev.clientY / document.documentElement.clientHeight - 0.5
+        });
+    }
+
+    handleDeviceOrientation(ev) {
+        this.setState({
+            "x": ev.gamma / 180,
+            "y": ev.beta / 360
         });
     }
 
